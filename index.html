@@ -18,7 +18,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	</noscript>
 </head>
 
 <body class="is-preload">
@@ -31,7 +33,8 @@
 			<div class="content">
 				<div class="inner">
 					<h1>Denis Vashchenko</h1>
-					<p>A Computer Science and Engineering student interested in Adversarial Networks, Robotics, and Procedural Sound Generation.</p>
+					<p>A Computer Science and Engineering student interested in Adversarial Networks, Robotics, and
+						Procedural Sound Generation.</p>
 				</div>
 			</div>
 			<nav>
@@ -40,7 +43,7 @@
 					<li><a href="#experience">Experience</a></li>
 					<li><a href="#education">Education</a></li>
 					<li><a href="#about">About</a></li>
-					<!-- <li><a href="#elements">Elements</a></li> -->
+					<li><a href="#elements">Elements</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -56,11 +59,11 @@
 				<div class="table-wrapper">
 					<table class="alt">
 						<thead>
-							<tr>
+							<!-- <tr>
 								<th>Position</th>
-								<th>Company</th>
+								<th>Location</th>
 								<th>Date</th>
-							</tr>
+							</tr> -->
 						</thead>
 						<tbody>
 							<tr>
@@ -70,7 +73,7 @@
 							</tr>
 							<tr>
 								<td>Machine Learning Researcher</td>
-								<td>University of California, Merced</td>
+								<td>VICE Lab</td>
 								<td>Dec 2018 - Present</td>
 							</tr>
 							<tr>
@@ -103,8 +106,8 @@
 			<article id="projects">
 
 				<div class="column">
-					<h3><a href="#gasLEEK" target="_blank" class="btn btn-social-icon btn-twitter"></a><span
-							class="fa fa-github"></span></a>
+					<h3><a href="https://github.com/dvashchenko/gasLEEK" target="_blank"
+							class="btn btn-social-icon btn-twitter"></a><span class="fa fa-github"></span></a>
 						gasLEEK</h3>
 					<p>ValleyHackathon 1st Place 2019. Applying a LSTM Machine Learning model with persistence
 						forecasting to help drivers and truckers save money at the gas pump.</p>
@@ -142,20 +145,19 @@
 					<p>Coming soon...</p>
 			</article>
 
-			<!--gasLEEK-->
-			<article id="gasLEEK">
-				<h2>testing</h2>
-			</article>
-
 			<!-- About -->
 			<article id="about">
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/dvashchenko/" target="_blank"
-							class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/dvashchenko" target="_blank" class="icon fa-github"><span
-								class="label">GitHub</span></a></li>
-				</ul>
-				<h4></h4>
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dvashchenko/" target="_blank"
+								class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dvashchenko" target="_blank" class="icon fa-github"><span
+									class="label">GitHub</span></a></li>
+						<li><a href="mailto:denisvashchenko@gmail.com" target="_blank" class="icon fa-envelope"><span
+									class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<h6>Feel free to get in touch!</h6>
 
 			</article>
 
@@ -163,8 +165,13 @@
 			<article id="education">
 				<div class="column">
 					<span class="image main"><img src="images/merced.jpg" alt=""></span>
+					<!-- <span class="w3-content w3-section" style="max-width:500px">
+						<img class="mySlides" src="images\background\bg.jpg" style="width:100%">
+						<img class="mySlides" src="images\background\bg2.jpg" style="width:100%">
+						<img class="mySlides" src="images\background\bg3.jpg" style="width:100%">
+					</span> -->
 				</div>
-				<h4>I am currently in my Junior year at the University of California, Merced. Being a young and
+				<p>I am currently in my Junior year at the University of California, Merced. Being a young and
 					ambitious
 					University, Merced has offered many opportunities to get involved with faculty and their
 					projects.<br><br>
@@ -185,8 +192,25 @@
 					satellite and UAV
 					imagery via Google Earth Engine.<br><br>
 
-					I will be graduating in the Fall of 2019.</h4>
+					I will be graduating in the Fall of 2019.</p>
 			</article>
+
+			<!-- <script>
+				var myIndex = 0;
+				carousel();
+
+				function carousel() {
+					var i;
+					var x = document.getElementsByClassName("mySlides");
+					for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";
+					}
+					myIndex++;
+					if (myIndex > x.length) { myIndex = 1 }
+					x[myIndex - 1].style.display = "block";
+					setTimeout(carousel, 3000);
+				}
+			</script> -->
 
 			<!-- Elements -->
 			<article id="elements">
