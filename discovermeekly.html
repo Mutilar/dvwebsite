@@ -1,32 +1,28 @@
-<!DOCTYPE HTML>
-<html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135178577-1"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135178577-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    gtag('config', 'UA-135178577-1');
+</script>
 
-        gtag('config', 'UA-135178577-1');
-    </script>
-
-    <title>Denis Vashchenko</title>
-    <link rel="icon" href="images/background/meirl.png">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet"
-        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" />
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    </noscript>
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-</head>
+<title>Denis Vashchenko</title>
+<link rel="icon" href="images/background/meirl.png">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+<noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</noscript>
+<canvas id="myChart" width="400" height="400"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://www.chartjs.org/samples/latest/utils.js"></script>>
 
 <body class="is-preload">
     <article id="experience">
@@ -40,6 +36,17 @@
 </body>
 
 <script>
+    $.ajax({
+        url: "to pipeline function app",
+        type: "GET",
+        success: function (result) {
+            console.log(result)
+            //data = result, and iterate each 30
+        },
+        error: function (error) {
+            console.log(error)
+        }
+    })
     var presets = window.chartColors;
     var utils = Samples.utils;
     var ctx = document.getElementById('chart').getContext('2d');
@@ -63,11 +70,11 @@
     var data = {
         labels: ['danceability', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'valence'],
         datasets: [{
-            label: 'sample discover weekly avg 1',
+            label: 'test discover weekly avg 1',
             backgroundColor: utils.transparentize(presets.red),
             data: [0, 10, 5, 2, 20, 30, 45]
         }, {
-            label: 'sample discover weekly 2',
+            label: 'test discover weekly 2',
             backgroundColor: utils.transparentize(presets.green),
             data: [0, 1, 1, 2, 3, 123, 23]
         }
@@ -76,8 +83,6 @@
     var chart = new Chart('chart', {
         type: 'radar',
         data: data,
-        options: options
+        options: options,
     });
 </script>
-
-</html>
