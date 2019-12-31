@@ -1,23 +1,83 @@
-<canvas id="myChart" width="400" height="400"></canvas>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135178577-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-135178577-1');
+    </script>
+
+    <title>Denis Vashchenko</title>
+    <link rel="icon" href="images/background/meirl.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    </noscript>
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+</head>
+
+<body class="is-preload">
+    <article id="experience">
+        <div class="column_bottom">
+            <div class="wrapper" style="max-width: 1000px; margin: auto">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </article>
+
+</body>
+
 <script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    var presets = window.chartColors;
+    var utils = Samples.utils;
+    var ctx = document.getElementById('chart').getContext('2d');
+    var options = {
+        maintainAspectRatio: true,
+        spanGaps: false,
+        elements: {
+            line: {
+                tension: 0.1,
+            }
+        },
+        scale: {
+            gridLines: {
+                color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo']
+            },
+            ticks: {
+                display: false
+            }
+        }
+    };
+    var data = {
+        labels: ['danceability', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'valence'],
         datasets: [{
-            label: 'test dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            label: 'sample discover weekly avg 1',
+            backgroundColor: utils.transparentize(presets.red),
             data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
+        }, {
+            label: 'sample discover weekly 2',
+            backgroundColor: utils.transparentize(presets.green),
+            data: [0, 1, 1, 2, 3, 123, 23]
+        }
+        ]
+    };
+    var chart = new Chart('chart', {
+        type: 'radar',
+        data: data,
+        options: options
+    });
 </script>
+
+</html>
