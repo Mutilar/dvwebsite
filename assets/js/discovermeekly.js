@@ -61,7 +61,7 @@ function addDataset(result) {
             data.datasets = [];
             weeks.forEach(function (value, index) {
                 var datapoint = {
-                    "label": "Week " + index,
+                    "label": "Week " + (index + 1),
                     "backgroundColor": getColor(),
                     "data": []
                 }
