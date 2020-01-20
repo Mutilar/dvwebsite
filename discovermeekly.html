@@ -36,18 +36,9 @@
 </body>
 
 <script>
-    $.ajax({
-        url: "to pipeline function app",
-        type: "GET",
-        success: function (result) {
-            console.log(result)
-            //data = result, and iterate each 30
-        },
-        error: function (error) {
-            console.log(error)
-        }
-    })
+
     var presets = window.chartColors;
+    console.log(presets)
     var utils = Samples.utils;
     var ctx = document.getElementById('chart').getContext('2d');
     var options = {
@@ -69,20 +60,43 @@
     };
     var data = {
         labels: ['danceability', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'valence'],
-        datasets: [{
-            label: 'test discover weekly avg 1',
-            backgroundColor: utils.transparentize(presets.red),
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }, {
-            label: 'test discover weekly 2',
-            backgroundColor: utils.transparentize(presets.green),
-            data: [0, 1, 1, 2, 3, 123, 23]
-        }
-        ]
+        datasets: []
     };
+
     var chart = new Chart('chart', {
         type: 'radar',
         data: data,
         options: options,
     });
+
+    function getColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    $.ajax({
+        url: "https://discovermeekly.azurewebsites.net/api/dataPipe?code=DnlLHUs5J0dSP3t9GHwu5nJfvSmz0z8T2l5f6CEXqTJTPMja90y6cA==&analysis=features",
+        type: "GET",
+        success: function (result) {
+            weeks = JSON.parse(result)
+            weeks.forEach(function (value, index) {
+                var datapoint = {
+                    "label": "Week " + index,
+                    "backgroundColor": getColor(),
+                    "data": []
+                }
+                datapoint.data.push(value['danceability'], value['energy'], value['instrumentalness'], value['liveness'], value['loudness'], value['speechiness'], value['valence'])
+                data.datasets.push(datapoint);
+                chart.update();
+            });
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    })
+
 </script>
