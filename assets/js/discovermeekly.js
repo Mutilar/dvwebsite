@@ -57,7 +57,7 @@ function addDataset(result) {
             index = 0;
             big_cycle++;
         }
-        if (big_cycle >= 2) {
+        if (big_cycle > 2) {
             data.datasets = [];
             weeks.forEach(function (value, index) {
                 var datapoint = {
